@@ -6,11 +6,17 @@ import (
 	"time"
 
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 	"github.com/SnakeGuitar/Ninco-Go/internal/api/handler"
 	"github.com/SnakeGuitar/Ninco-Go/internal/platform/db"
 )
 
 func main() {
+	// Load environment variables from .env file
+	if err := godotenv.Load(); err != nil {
+		log.Println("No .env file found or error loading it. Using system environment variables.")
+	}
+
 	// 1. Setup Database Configuration from Environment
 	cfg := db.Config{
 		User:            os.Getenv("DB_USER"),
