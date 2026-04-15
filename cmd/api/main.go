@@ -5,10 +5,10 @@ import (
 	"os"
 	"time"
 
-	"github.com/gin-gonic/gin"
-	"github.com/joho/godotenv"
 	"github.com/SnakeGuitar/Ninco-Go/internal/api/handler"
 	"github.com/SnakeGuitar/Ninco-Go/internal/platform/db"
+	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
@@ -46,7 +46,7 @@ func main() {
 	api := r.Group("/api/v1")
 	{
 		api.GET("/health", handler.HealthCheck)
-		
+
 		// Future routes will go here:
 		// api.POST("/auth/login", handler.Login)
 		// api.GET("/stores", handler.GetStores)

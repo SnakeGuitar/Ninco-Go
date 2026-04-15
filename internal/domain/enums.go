@@ -24,3 +24,13 @@ const (
 	ActionUpdate Action = "UPDATE"
 	ActionDelete Action = "DELETE"
 )
+
+// Category represents the entity category
+type Category string
+
+const (
+	PC     Category = "COMPUTERS"
+	Laptop Category = "LAPTOPS"
+	Mobile Category = "MOBILES"
+	Audio  Category = "AUDIO"
+)
